@@ -1,0 +1,768 @@
+
+$color-primary: #F8F4F0
+$color-secondary: #EFE5DC
+$color-ternary: #DEC19B
+$accent-one-light: #B85588
+$accent-one-dark: #6D2E4E
+$accent-one-darker: #53223B
+$accent-two: #F8C03E
+$header-font: "Bilbo Swash Caps"
+    
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    z-index: 5
+    position: relative
+    
+html
+
+
+body
+    background-color: $color-primary
+    margin: 0
+    padding: 0
+    font-size: 16px
+    font-family: "Raleway"
+    
+
+.bg-primary
+    background-color: $color-primary
+
+.bg-secondary
+    background-color: $color-secondary
+
+.bg-ternary
+    background-color: $color-ternary
+
+
+.bg-accent-one-light
+    background-color: $accent-one-light
+    
+.bg-accent-one-dark
+    background-color: $accent-one-dark
+
+.bg-accent-one-darker
+    background-color: $accent-one-darker
+
+.bg-accent-two
+    background-color: $accent-two
+.bg-white
+    background-color: #fff
+
+
+.nav
+    background-color: $color-primary
+    height: 80px
+    position: sticky
+    top: 0
+    width: 100%
+    z-index: 10
+
+.nav-smlogo
+    position: relative
+    float: left
+    padding-left: 25px
+    padding-top: 15px
+    padding-bottom: 15px
+    height: 80px
+
+.nav-smlogo svg
+    height: 100%
+    width: auto
+    
+
+
+.nav-right
+    float: right
+    padding-right: 25px
+    padding-top: 15px
+    padding-bottom: 15px
+    height: 80px
+
+.nav-right a
+    float: left
+    padding: 0 40px
+    font-size: 1.125em
+    text-transform: uppercase
+    text-decoration: none
+    text-align: center
+    color: #5b5b5b
+    line-height: 50px
+
+    &:hover
+        color: #000
+    
+
+
+.nav-services-dropdown
+    display: inline
+    height: 50px
+    overflow: hidden
+    padding: 0 40px
+    width: auto
+
+   
+.nav-services-dropdown-btn
+    font-size: 1.125em
+    border: none
+    outline: none
+    background-color: inherit
+    font-family: inherit
+    margin: 0
+    padding: 0
+    text-align: center
+    color: #5b5b5b
+    width: auto
+    display: inline
+
+.nav-services-dropdown-content
+    display: none
+    position: absolute
+    min-width: 164px
+
+    // &:hover
+    //     display: block
+
+    // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    // z-index: 1;
+
+.nav-facebook svg
+    fill: #5b5b5b
+    height: 24px
+    padding: 13px auto
+    line-height: 
+    width: auto
+    &:hover
+        fill: $accent-one-light
+
+.nav-insta svg
+    padding-right: 0
+    fill: #5b5b5b
+    height: 30px
+    padding: 13px auto
+    line-height: 
+    width: auto
+    &:hover
+        fill: $accent-one-light
+
+.nav-mobile
+    display: none
+
+main
+    width: 100%
+    
+
+.hero
+    width: 100%
+    padding: 0 25px 25px 25px
+    
+    
+.hero-background
+    height: 832px
+    width: 100% 
+    background-color: grey
+    background-image: url("../images/hero.png")
+    background-size: cover
+    background-attachment: fixed
+    
+
+    
+
+
+// .hero-block
+//     height: 88vh
+//     width: 96vw
+//     background-color: grey
+//     margin: 0 auto
+//     padding-bottom: 2vh
+
+.hero-block
+    
+    width: 800px
+    height: 500px
+    margin: 0 auto
+    position: absolute
+    left: 50%
+    top: 50%
+    margin-left: -400px
+    margin-top: -250px
+    text-align: center
+
+    
+.hero-title
+    font-family: $header-font
+    font-size: 10em
+    color: #000
+    cursor: default
+
+.hero-subtitle
+    font-size: 1.7em
+    cursor: default
+
+
+.hero-btn-row
+    display: block
+    padding-top: 40px
+
+.hero-btn
+    display: inline-block
+    width: 240px
+    height: 60px
+    position: relative
+    padding: 5px
+    border-radius: 30px
+    margin: 0 20px
+
+    & a
+        line-height: 60px
+        font-size: 1.125em
+        text-decoration: none
+        text-transform: uppercase
+        
+
+    &:hover
+        cursor: default
+
+.div-button
+    position: absolute
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+
+
+.hero-book-online-btn a
+   color: #fff
+
+
+.hero-services-btn a
+    color: #000
+
+
+.testimonial
+    height: 250px
+    padding: 25px 0
+    
+
+.testimonial-block
+    height: 100%
+    width: 85%
+    max-width: 1640px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    
+    
+
+.testimonial-item
+    flex: 0 1 20%
+    display: flex
+    align-items: center
+    
+    
+
+    & p
+        text-align: justify
+        font-weight: 500
+        width: 100% 
+
+        & .name
+            font-size: 0.9em
+            font-weight: 300
+        & .quote
+            font-size: 2em
+            font-family: $header-font
+            font-weight: 500
+
+
+.about
+    height: 800px
+    padding: 50px 0
+
+.about-block
+    width: 1370px
+    margin: 0 auto
+    height: 100%
+    position: relative
+
+.about-left
+    // position: relative
+    // left: 15%
+    // top: 50px
+    height: 490px
+    float: left
+    position: absolute
+    top: 50%
+    margin-top: -245px
+
+
+.about-left h1
+    font-size: 1.875em
+    width: 600px
+    line-height: 100px
+    
+
+.about-h
+    font-family: $header-font
+    font-size: 2em
+
+.about-btn
+    display: inline-block
+    width: 240px
+    height: 60px
+    position: relative
+    padding: 5px
+    border-radius: 30px
+    margin-top: 25px 
+    
+
+    & a
+        line-height: 60px
+        text-decoration: none
+        text-transform: uppercase
+        color: white
+        text-align: center
+        font-size: 1.125em
+        
+
+    &:hover
+        cursor: default
+
+.about-right
+    width: 525px
+    height: 700px
+    background-color: white
+    float: right
+    // background-image: url("../images/sm.jpg")
+    // background-attachment: fixed
+    // background-size: cover
+
+
+
+.services
+
+    padding: 50px 0
+
+.services-block-card
+    height: 500px
+    width: 85%
+    max-width: 1640px
+    margin: 0 auto
+    display: flex
+    justify-content: space-between
+    align-items: center
+    
+
+.service-item
+    flex: 0 1 375px
+    height: 500px
+    background-color: #fff
+
+.service-image
+    height: 336px
+    width: 100%
+    background-color: red
+        
+.service-btn-cont
+    height: 164px
+    position: relative
+
+.service-btn
+    width: 240px
+    height: 60px
+    padding: 5px
+    border-radius: 30px
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -30px
+    margin-left: -120px
+
+
+    & a
+        line-height: 60px
+        text-decoration: none
+        text-transform: uppercase
+        color: #000
+        text-align: center
+        font-size: 1.125em
+
+
+.services-row
+    padding-top: 50px
+    margin: 0 auto
+    width: 800px
+    text-align: center
+
+    & h1
+        font-size: 1.5em
+        
+        // color: #74435D
+
+        & span
+            font-size: 3.5em
+            // color: #5A384A
+
+
+
+.album-row
+    display: flex
+    width: 100%
+    position: relative
+  
+    
+    
+
+
+
+.album-row-item
+    flex: 0 1 25%
+    background-color: grey
+    border: solid 1px pink
+    &:after
+      content: ""
+      float: left
+      padding-bottom: 100%
+
+    
+.album-btn
+    width: 240px
+    height: 60px
+    padding: 5px
+    border-radius: 30px
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -30px
+    margin-left: -120px
+    border: 2px solid $color-secondary
+
+.album-btn a
+    line-height: 60px
+    text-decoration: none
+    text-transform: uppercase
+    color: $color-secondary
+    text-align: center
+    font-size: 1.125em
+
+.details
+    width: 100%
+    height: 801px
+
+
+.details-gmaps
+    height: 300px
+    width: 100%
+    background-color: pink
+    & iframe
+        height: 100%
+        width: 100%
+
+.details-block
+    height: 501px
+    padding: 50px
+    font-size: 0.75em
+
+    & h1
+        font-size: 1.5em
+
+
+.details-tables-cont
+    display: flex
+    height: 207px
+    justify-content: center
+    align-items: center
+    text-align: center
+    margin-bottom: 50px
+
+.details-table
+    width: 480px
+    flex: 0 1 50%
+    margin: 0 40px
+
+.details-table-body
+    display: flex
+
+.details-table-header
+    height: 60px
+    line-height: 60px
+    margin-bottom: 0 25px
+    font-family: $header-font
+    font-size: 2em
+
+.details-table-row
+    flex: 1 1 33.3%
+
+
+.call-btn-cont
+    height: 60px
+    position: relative
+
+.call-btn
+    width: 380px
+    height: 60px
+    padding: 5px
+    border-radius: 30px
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -30px
+    margin-left: -190px
+    
+
+.call-btn a
+    line-height: 60px
+    text-decoration: none
+    text-transform: uppercase
+    color: $color-secondary
+    text-align: center
+    font-size: 1.125em
+
+
+
+
+
+
+
+
+
+.address-row
+    padding-top: 50px
+    height: 42px
+    margin: 0 auto
+    text-align: center
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main
+    height: 4084.75px
+  
+
+
+.footer
+    z-index: 0
+    position: sticky
+    bottom: 0
+    width: 100%
+    height: 260px
+    
+.footer-main
+    height: 210px
+    width: 100%
+    z-index: 0
+    position: relative
+
+.footer-bottom
+    height: 50px
+    width: 100%
+    z-index: 1
+    position: relative
+    bottom: 0
+    
+
+    & .row
+        height: 50%
+
+    & a
+        line-height: 25px
+        text-decoration: none
+        color: #c2a6ab
+
+    & p
+        line-height: 25px
+        color: #c2a6ab
+        
+
+.footer-bottom-left
+    float: left
+    height: 100%
+    padding-left: 20px
+    
+.footer-bottom-right
+    float: right
+    text-align: right
+    height: 100%
+    padding-right: 20px
+
+.footer-copy
+    & p 
+        color: #72495b
+
+    & a
+        font-size: 1em 
+    
+
+.footer-block
+    padding: 40px 0
+    height: 100%
+    width: 600px
+    margin: 0 auto
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    & a
+        font-size: 1.125em
+        padding: 0 50px
+        cursor: pointer
+        color: #c2a6ab
+        text-decoration: none
+        text-align: center
+
+.footer-nav
+    margin: 0 auto
+
+
+.footer-socials
+    text-align: center
+    & svg
+        fill: #331625
+
+.footer-insta 
+    & a 
+        height: 30px
+        line-height: 30px
+    & svg
+        height: 30px
+        
+
+.footer-facebook 
+    & a 
+        height: 25px !important
+        line-height: 25px
+        
+    & svg
+        height: 25px
+        line-height: 25px
+        
+
+.footer-mailing
+    text-align: center
+    margin: 0 auto
+    display: none
+    
+
+    & p
+        color: #331625
+        
+
+    & input
+        height: 30px   
+        width: 250px    
+        border-radius: 15px
+        margin-top: 10px
+
+.footer-mailing-email
+    background-color: $accent-one-dark
+    outline: none
+    border: solid 1px $color-secondary
+    padding-left: 15px
+
+.footer-mailing-subscribe
+    background-color: $accent-two
+    border: none
+    color: #331625
+    
+
+
+.footer-watermark
+    z-index: 0
+    line-height: 210px
+    position: relative
+    text-align: center
+    width: 100%
+    font-size: 6.8em
+    top: 0
+    opacity: 0.02
+    font-family: $header-font
+
+.banner
+    height: 360px
+    width: 100%
+    background-image: url(../images/hero.png)
+    background-size: cover
+    background-position-y: -100px
+    text-align: center
+    & h1
+        line-height: 180px
+        font-family: $header-font
+        font-size: 4em
+
+
+.content 
+    width: 100%
+    position: relative
+
+.content-block
+    position: relative
+    top: -180px
+    width: 70%
+    margin: 0 auto
+    height: auto
+    min-height: 80vh
+    padding: 50px
+    
+
+.service-table
+    margin: 0 auto
+    
+    
+.service-header
+    text-align: left
+    font-size: 1.125em
+    background-color: $accent-one-light
+    padding: 5px 10px
+    min-width: 100px
+    text-transform: uppercase
+
+.service-title-header
+    width: 250px
+    border-top-left-radius: 20px
+    
+
+.service-duration-header
+    font-size: 1em !important
+    text-align: right
+
+.service-price-header
+    text-align: right !important
+    border-top-right-radius: 20px
+
+.service-duration
+    text-align: right
+
+.service-price
+    text-align: right
+
+
+.service-table 
+    border-collapse: collapse
+
+    & td
+        padding: 5px
+        border-bottom: solid 1px $accent-one-light
+
+.stylist-block
+    margin-top: 50px
+
+
+.attention
+    padding: 50px
+    background-color: #FF4949
+    color: #fff
+    & h1
+        text-align: center
+    & a
+        text-decoration: underline
+        color: #ffffff

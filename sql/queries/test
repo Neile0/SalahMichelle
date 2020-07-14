@@ -1,0 +1,29 @@
+	CREATE TEMPORARY TABLE intervals;
+       
+    WHILE counter <= day DO
+        CALL InsertCalendar(dt);
+        SET counter = counter + 1;
+        SET dt = DATE_ADD(dt,INTERVAL 1 day);
+    END WHILE;
+    INSERT INTO intervals(
+		start_time,
+        end_time)
+    VALUES(
+		_start_time,
+        _end_time);
+
+
+
+        	CREATE TEMPORARY TABLE intervals(
+		start_time TIME,
+        end_time TIME
+    );
+       
+    
+    INSERT INTO intervals(
+		start_time,
+        end_time)
+    VALUES(
+		_start_time,
+        _end_time);
+

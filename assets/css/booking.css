@@ -1,0 +1,169 @@
+.alert {
+  padding: 50px;
+  background-color: #FF4949;
+  color: #fff;
+}
+
+.alert h1 {
+  text-align: center;
+}
+
+.alert a {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+.service-type-block {
+  display: none;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.padding-start {
+  padding: 50px;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h2 span {
+  font-size: 0.5em;
+}
+
+select {
+  margin: 25px 0 50px 0;
+  font-size: 1em;
+  padding: 10px;
+  border: 1px solid transparent;
+  width: 240px;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+select:focus {
+  background-color: #fff;
+  border: 1px solid transparent;
+}
+
+.calander {
+  margin: 25px 0 50px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 350px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.cal-disabled {
+  color: #afafaf !important;
+  cursor: pointer;
+}
+
+.cal-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.cal-arrow {
+  cursor: pointer;
+}
+
+.cal-header-left {
+  width: 20%;
+  text-align: right;
+}
+
+.cal-header-month {
+  width: 60%;
+  text-align: center;
+}
+
+.cal-header-month:hover {
+  cursor: default;
+}
+
+.cal-header-right {
+  width: 20%;
+  text-align: left;
+}
+
+.cal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.cal-days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.cal-day-header {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 14%;
+          flex: 1 0 14%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+.cal-day {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 14%;
+          flex: 1 0 14%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cal-day p {
+  margin: 0;
+  height: 100%;
+  line-height: 40px;
+}
+
+.cal-day p:hover {
+  cursor: default;
+}
+
+.date-selectable {
+  color: #000;
+  border: solid #efefef 1px;
+}
+
+.date-selectable:hover {
+  border: solid #000 2px;
+  cursor: pointer;
+}
+
+.non-selected-month {
+  color: #afafaf;
+}
+
+.selected-date {
+  background-color: white;
+}
+
+.unavailable {
+  color: red;
+}
+/*# sourceMappingURL=booking.css.map */
