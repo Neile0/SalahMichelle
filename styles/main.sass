@@ -1,0 +1,990 @@
+$color-primary: #F8F4F0
+$color-secondary: #EFE5DC
+$color-ternary: #DEC19B
+$accent-one-light: #B85588
+$accent-one-dark: #6D2E4E
+$accent-one-darker: #53223B
+$accent-two: #F8C03E
+$header-font: "Bilbo Swash Caps"
+
+$padding-dsk: 25px
+$padding-mobile: 5px
+    
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap');
+
+
+*
+    margin: 0
+    box-sizing: border-box
+    font-weight: normal
+    
+html, body
+    height: 100%
+    line-height: 1.8
+    font-size: 16px
+
+
+body
+    background-color: $color-primary
+    font-family: "Poppins", sans-serif
+    
+a
+    text-decoration: none
+    color: black
+
+button
+    border: none
+    &:active
+        outline: none
+    &:hover
+        cursor: pointer
+
+.bg-primary
+    background-color: $color-primary
+
+.bg-secondary
+    background-color: $color-secondary
+
+.bg-ternary
+    background-color: $color-ternary
+
+.bg-accent-one-light
+    background-color: $accent-one-light
+    
+.bg-accent-one-dark
+    background-color: $accent-one-dark
+
+.bg-accent-one-darker
+    background-color: $accent-one-darker
+
+.bg-accent-two
+    background-color: $accent-two
+.bg-white
+    background-color: #fff
+
+// 
+// UNIVERSAL STYLES
+// 
+
+.button
+    padding: 5px 10px
+    border-radius: 15px
+    text-transform: uppercase
+    font-size: 1.25em
+    & a
+        font-size: 2em
+    transition: all .2s ease-in-out
+    &:hover
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+        // transform: scale(1.05)
+        cursor: pointer
+
+.button-no-animation
+    &:hover
+        box-shadow: none !important
+        transform: none !important
+
+.button-white
+    color: white
+
+.button-black
+    color: black
+
+.button-accent-one
+    background-color: $accent-one-light
+    color: $color-primary
+
+
+
+select
+    font-size: 1em
+    padding: 10px
+    border: 1px solid transparent
+    width: 240px
+    background-color: #fff
+    border-radius: 25px
+    &:focus
+        background-color: #fff;
+        border: 1px solid transparent
+
+input
+    font-size: 1em
+    padding: 10px
+    border: 1px solid transparent
+    width: 240px
+    background-color: #fff
+    border-radius: 25px
+    &:focus
+        background-color: #fff;
+        border: 1px solid transparent
+
+.inputsubmit
+    display: block
+
+.title-hr
+    border-color: black
+    margin: 0 auto
+    width: 90px
+
+// 
+// BANNERS
+// 
+.banner
+    background-attachment: fixed
+
+.book-page-banner
+    background-image: url("/images/17-IMG_5586.jpg")
+    background-size: cover
+    background-position-y: 40%
+
+.service-page-banner
+    background-image: url("/images/27-IMG_5599.jpg")
+    background-size: cover
+    background-position-y: 30%
+
+.about-page-banner
+    background-image: url("/images/salon.jpg")
+    background-size: cover
+    background-position-y: 30%
+
+
+.gents-page-banner
+    background-image: url("/images/44-IMG_5660.jpg")
+    background-size: cover
+    background-position-y: 30%
+
+// 
+// NAVIGATION
+// 
+.nav-btn
+    color: white !important
+    border-radius: 15px
+
+.nav
+    overflow: hidden
+    position: fixed
+    z-index: 3
+    top: 0
+    width: 100%
+    height: 100px
+    display: flex
+    padding: 15px 25px
+    align-items: center
+    justify-content: space-between
+
+
+    & ul
+        list-style: none
+
+    & li
+        display: inline-block
+        padding: 0 $padding-dsk
+        & a
+            padding:  5px 10px 
+            text-transform: uppercase
+            color: grey
+            &:hover
+                color: black
+
+
+
+.nav-smlogo img
+    height: 50px
+    max-width: 100%
+    float: left
+
+.nav-right
+    float: right
+    & img
+        height: auto
+
+.nav-mobile
+    display: none
+
+
+// 
+// FOOTER
+// 
+.footer
+    // margin-top: 100px
+    overflow: hidden
+    position: sticky
+    z-index: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+
+.footer-main
+    width: 100%
+
+.footer-socials
+    display: none
+
+.footer-mailing
+    display: none
+
+.footer-block
+    padding: 50px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.footer-nav
+    display: flex
+    width: 100%
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    & ul
+        list-style: none
+
+    & li
+        display: inline-block
+        padding: 0 $padding-dsk
+        & a
+         
+            padding:  5px 10px 
+            text-transform: uppercase
+            opacity: 0.6
+            &:hover
+                opacity: 1
+                color: black
+   
+.footer-ul-secondary a
+    opacity: 0.5 !important
+    font-size: 0.875em !important
+
+
+
+
+.footer-bottom
+    padding: 5px 10px
+    width: 100%
+    font-size: 0.875em
+
+.footer-bottom-left
+    float: left
+
+.footer-bottom-right
+    float: right
+    text-align: right
+    
+
+// 
+// HERO SECTION
+// 
+
+main
+    min-height: 100vh
+    position: relative
+    z-index: 2
+    width: 100%
+    
+
+.hero
+    height: 100vh
+    display: flex
+    position: relative
+    align-items: center
+    justify-content: center
+    padding: $padding-dsk
+ 
+.hero-background
+    background-position: center
+    background-size: cover
+    background-attachment: fixed
+    background-image: url("/images/26-IMG_5598.jpg")
+    height: 100%
+    width: 100%
+
+.hero-overlay
+    width: 100%
+    height: 100%
+    background-color: black
+    opacity: 0.3
+    z-index: 3
+    transition: .5s
+
+.hero-block
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: 90vw
+    min-height: 300px
+    color: white
+    display: flex
+    flex-direction: column
+    text-align: center
+    justify-content: space-between
+    z-index: 4
+
+.hero-title
+    font-family: $header-font
+    font-size: 10rem
+    line-height: 1
+
+.hero-btn-row
+    display: flex
+    justify-content: center
+    align-items: center
+
+.hero-btn
+    margin: 0 25px
+    width: 180px
+
+
+
+// 
+// TESTIMONIAL SECTION
+// 
+
+.testimonial
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 25px 25px 50px 25px 
+
+.testimonial-block
+    display: flex
+    justify-content: space-between
+
+.testimonial-item
+    max-width: 33.33%
+
+
+// 
+// ABOUT SECTION
+// 
+
+.about
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 50px 25px
+
+.about-block
+    display: flex
+    justify-content: center
+    align-items: center
+    
+
+
+.about-left
+    float: left
+    order: 1
+    max-width: 40%
+    padding: $padding-dsk
+    margin-right: 25px
+    & h1
+        padding-bottom: 10px
+
+    & span
+        font-family: $header-font
+        font-size: 3em
+        line-height: 0.45
+
+    
+    
+.about-right
+    float: right
+    order: 2
+    margin-left: 25px
+    & img
+        max-width: 100%
+        height: auto
+  
+//
+// SERVICES
+//  
+
+.services
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 50px
+    
+.services-block-card
+    display: flex
+    width: 100%
+    justify-content: space-evenly
+    align-items: center
+    margin-bottom: 50px
+
+.service-item
+    width: 300px
+    height: 375px
+    background-color: white
+    border-radius: 15px
+    transition: all .25s ease-in-out
+    &:hover
+        transform: scale(1.1)
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19)
+        cursor: pointer
+
+.service-image
+    width: 100%
+    height: 60%
+    overflow: hidden
+    & img
+        max-width: 100%
+        width: 100%
+        border-radius: 15px 15px 0 0 
+    
+.service-link
+    
+
+.service-btn-cont
+    height: 40%
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    & a
+        width: 180px
+        text-align: center
+
+.services-title
+    text-align: center
+    padding-bottom: 50px
+    text-transform: uppercase
+    font-size: 2em
+
+          
+//
+// ALBUMS
+//  
+
+
+
+.album-row
+    display: flex
+    position: relative
+
+
+.album-row-item
+    flex: 0 1 25%
+
+    &:after
+      content: ""
+      float: left
+      padding-top: 100%
+    & img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    
+.album-btn
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    border: solid 2px $color-primary
+    color: $color-primary
+    border-radius: 15px
+    & a
+        width: 180px
+        padding: 0 25px
+        color: $color-primary
+        text-transform: uppercase
+    &:hover
+        background-color: $color-primary
+        color: black
+        transform: translate(-50%, -50%) !important
+
+// 
+// SHARE
+// 
+
+.share
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding: 50px
+    line-height: 1
+
+.share-row
+    text-align: center
+    & span
+        font-size: 2.5em
+
+
+// 
+// DETAILS
+// 
+
+.details
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 50px 25px
+
+.details-block
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    & hr
+        width: 90%
+        margin: 50px
+        border-color: $accent-one-light
+
+
+.details-table-block
+    display: flex
+    align-items: center
+    justify-content: center
+
+.details-table
+    width: 300px
+    margin: 0 5%
+    & th
+        text-align: left
+    & td
+        text-align: center
+        padding-left: 50px
+
+.details-table-header
+    font-family: $header-font
+    font-size: 3rem
+    text-align: center !important
+    line-height: 1
+    padding-bottom: $padding-dsk
+
+.details-contact-block
+    display: flex
+    flex-direction: column
+    text-align: center
+
+.details-call-btn
+    margin-bottom: 25px
+
+.details-address
+    text-align: center
+
+.details-gmaps
+    width: 100%
+    height: 30vh
+    & iframe
+        width: 100%
+        height: 100%
+
+// 
+// 
+// 
+// SECONDARY PAGE STYLES
+// 
+// 
+// 
+
+.banner
+    width: 100%
+    height: 500px
+    display: flex
+    position: relative
+    align-items: center
+    justify-content: center
+    padding: $padding-dsk
+
+.banner-title
+    background-color: $color-primary
+    padding: 25px 50px
+    top: 50px
+    position: relative
+    font-family: $header-font
+    font-size: 2em
+
+
+.content
+    padding: $padding-dsk
+    min-height: 100vh
+    display: flex
+    
+.content-container
+    max-width: 980px
+    width: 100%
+    flex-direction: column
+
+
+.content-block
+    padding: 25px
+    min-height: 100%
+    width: 100%
+    display: flex
+    justify-content: center
+    // align-items: center
+
+
+// 
+// CUSTOMER ALERT BANNER
+// 
+.customer-alert-banner
+    background-color: #FF4949
+    width: 100%
+    padding: 50px
+    color: white
+    text-align: center
+    & a
+        color: white
+        text-decoration: underline
+
+
+
+// 
+// BOOK PAGE
+// 
+
+   
+
+.service-type-block
+    display: none
+
+.book-page select
+    margin: 25px 0 50px 0
+
+.booking-container
+    max-width: 980px
+    width: 100%
+
+.booking-block
+    min-height: 200px
+
+.booking-calendar
+    margin: 25px 0 50px 0
+
+.confirmbooking
+    margin: 50px 0
+
+.date-block span
+    font-size: 0.625em
+
+
+.user-details-block
+    display: flex
+    & input
+        margin: 0 25px 25px 0
+
+.appointment-block
+    display: none
+// 
+// CALENDAR
+// 
+    
+.calander
+    margin: 25px 0 50px 0
+    display: flex
+    max-width: 280px
+    width: 100%
+    flex-wrap: wrap
+    justify-content: space-between
+    
+.cal-disabled
+    color: #afafaf !important
+    cursor: pointer
+
+.cal-header
+    display: flex
+    width: 100%
+
+.cal-arrow
+    cursor: pointer
+
+    
+.cal-header-left
+    width: 20%
+    text-align: right
+
+.cal-header-month
+    width: 60%
+    text-align: center
+
+.cal-header-month:hover
+    cursor: default
+
+.cal-header-right
+    width: 20%
+    text-align: left
+
+.cal-body
+    display: flex
+    width: 100%
+    // justify-content: space-evenly
+    flex-wrap: wrap
+
+.cal-days
+    display: flex
+    width: 100%
+    flex-wrap: wrap
+
+.cal-day-header
+    flex: 1 0 14%
+    width: 40px
+    height: 40px
+    text-align: center
+    align-items: center
+    display: flex
+    justify-content: center
+
+.cal-day-header:hover
+    cursor:default
+    
+.cal-day
+    flex: 1 0 14%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 40px
+    height: 40px
+    text-align: center
+
+
+
+    border-radius: 50%
+    p
+        margin: 0 
+        // height: 100%
+        line-height: 1    
+        // font-family: sans-serif
+        &:hover
+            cursor: default
+
+
+.date-selectable
+    color: #000
+ 
+    & p
+        border-bottom: 2px solid $accent-one-light
+        font-weight: 600
+
+        // background-color: $accent-one-light
+        // color: white
+        // width: 30px
+        // height: 30px
+
+    & p:hover
+        cursor: pointer
+        color: white
+
+
+       
+
+    &:hover
+        cursor: pointer !important
+        color: white
+        transition: .5s
+        background-color: $accent-one-light
+
+    
+
+.non-selected-month
+    color: #afafaf
+
+.selected-date
+    background-color: $accent-one-light
+    & p
+        color: white
+
+
+.unavailable
+    color: red
+    opacity: 0.4
+
+
+// 
+// SERVICES
+// 
+
+
+.service-table
+    margin: 0 auto
+    
+    
+.service-header
+    text-align: left
+    font-size: 1.125em
+    background-color: $accent-one-light
+    padding: 5px 10px
+    min-width: 100px
+    text-transform: uppercase
+
+.service-title-header
+    width: 250px
+    border-top-left-radius: 20px
+    
+
+.service-duration-header
+    font-size: 1em !important
+    text-align: right
+
+.service-price-header
+    text-align: right !important
+    border-top-right-radius: 20px
+
+.service-duration
+    text-align: right
+
+.service-price
+    text-align: right
+
+
+.service-table 
+    border-collapse: collapse
+
+    & td
+        padding: 5px
+        border-bottom: solid 1px $accent-one-light
+
+
+
+
+
+
+
+
+
+
+// 
+// 
+// 
+// MOBILE
+// 
+// 
+// 
+
+@media only screen and (max-width: 1100px)
+    .album-item-four
+        display: none
+
+    .album-row-item
+        flex: 0 1 33.33%
+
+@media only screen and (max-width: 1275px)
+    .services-block-card
+        flex-direction: column
+        width: 100%
+
+
+    .service-item
+        width: 100%
+        max-width: 340px
+        max-height: 425px
+        background-color: white
+        margin-bottom: 50px
+    
+
+@media only screen and (max-width: 800px)
+    $padding-dsk: 5px   
+
+    .nav-smlogo img
+        height: 40px
+
+    .button a
+        font-size: 1rem
+
+    .nav-right
+        display: none
+
+    .hero
+        padding: 10px
+
+    .hero-title
+        font-size: 3rem
+
+    .hero-btn-row
+        flex-direction: column
+        min-height: 100px
+        justify-content: space-between
+
+
+    .banner-title
+        font-size: 1rem
+
+    .testimonial-block
+        flex-direction: column
+
+    .testimonial-item
+        max-width: 100%
+
+    .about-block
+        flex-direction: column-reverse
+
+    .about-left
+        padding: 0
+        margin: 0
+        float: none
+        max-width: 100%
+        & h1
+            font-size: 1rem
+
+    .about-right
+        margin: 0
+        max-width: 60%
+        
+
+    .services-title
+        font-size: 1.5em
+        
+
+
+
+
+    .album-item-three
+        display: none
+
+    .album-row-item
+        flex: 0 1 50%
+
+
+    .share-row
+        text-align: center
+        font-size: 0.625rem
+        & span
+            font-size: 2.5rem
+
+    .details-table-block
+        flex-direction: column
+        justify-content: space-between
+        min-height: 650px
+
+
+    .details-address h1
+        font-size: 1.5em
+
+    .footer-block
+        padding: $padding-mobile
+
+    .footer-nav
+        & ul
+            text-align: center
+            padding: 0
+
+        & li
+            padding: 0
+    
+    .footer-bottom
+        font-size: 0.625em
+
+    .footer-bottom-left
+        float: none
+        text-align: center
+
+    .footer-bottom-right
+        float: none
+        text-align: center
+
+    .content
+        padding: $padding-mobile
+
+    .content-block
+        padding: 5px
+

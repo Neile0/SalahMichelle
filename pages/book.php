@@ -4,28 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salah Michelle | Book An Appointment</title>
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/booking.css">
-    <script src="/assets/scripts/booking_system/booking_system.js"></script>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="icon" type="image/svg" href="/images/icons/favicon.svg">
+    <script src="/scripts/booking_system.js"></script>
 </head>
 <body>
-<?php include '../includes/connection.php';?>
-<?php include '../includes/topnav.php';?>
-    <div class="banner">
-        <div class="title">
+<?php 
+$path = $_SERVER['DOCUMENT_ROOT'];
+$navPath = $path ."/topnav.php";
+$dbPath = $path . "/conn.php";
+include_once($dbPath);
+include_once($navPath);
+
+// $type = "GENTS";
+?>
+    <main class="bg-primary book-page">
+    <div class="banner book-page-banner">
+        <div class="banner-title">
             <h1>Book an Appointment</h1>
         </div>
     </div>
 
-    <div class="content bg-secondary ">
-    <div class="content-block bg-primary no-padding">
-    <div class="alert">
+    <div class="customer-alert-banner">
         <h1>ATTENTION</h1>
         <h2>Online bookings are currently only available for Gents services. You can always call us on <a href="tel:01355224033">01355 224033</a> for an appointment.</h2>
     </div>
-    <div class="padding-start">
-        <div class="service-type-block" id="service-type">
-            <label for="service-type" id="service-type-label">Type:</label>
+    <div class="content bg-primary ">
+    <div class="content-block bg-secondary book-page-content-block">
+        <div class="booking-container">
+
+
+        <div class="service-type-block booking-block" id="service-type">
+            <label for="service-type" id="service-type-label"><h2>Type</h2></label>
             <select name="service-type" id="service-type-select" onchange=selectServiceType(this.value)>
                 <option value='LADIES'>Ladies</option>"
                 <option value='GENTS'>Gents</option>"
@@ -33,7 +43,7 @@
             </select>
         </div>
 
-        <div class="service-block">
+        <div class="service-block booking-block">
             <label for="service" id="service-label"><h2>Service</h2></label>
             <select name="service" id="service-select" onchange=selectService(this.value)>
                 <option value="NOSELECTION">Select a Service</option>
@@ -50,7 +60,7 @@
             </select>
         </div>
 
-        <div class="stylist-block">
+        <div class="stylist-block booking-block">
 
 
         
@@ -60,9 +70,9 @@
                 </select>
         </div>
 
-        <div class="date-block">
+        <div class="date-block booking-block">
             <label for="date"><h2>When <span>(please note that bookings must be made at least 2 days in advance)</span></h2></label>
-            <div class="calander " >
+            <div class="calander booking-calendar" >
                 <div class="cal-header ">
                     <div class="cal-header-left cal-header-item cal-arrow cal-disabled"  id="cal-left-arrow"><</div>
                     <div class="cal-header-month cal-header-item cal-disabled" id="cal-header-month"></div>
@@ -96,20 +106,27 @@
             </div>
         </div>
 
-        <div class="time-block">
+        <div class="time-block booking-block">
         <label for="time"><h2>Time</h2></label>
         <div class="time-cont" id="time-cont">
-
+            No Possible Times
 
         </div>
-        <div class="appointment-block">
+        </div>
+        <div class="confirmbooking">
+           <button class="button bg-accent-one-light" onclick=confirmAppointmentDetails()>Confirm Booking</button>
+
+        </div>
+
+        <div class="appointment-block booking-block" id="appointment-block">
             <label for="time"><h2>Your Appointment</h2></label>
             <div class="appointment-details" id="appointment-details">
 
 
             </div>
-            <div class="user-details-block">
-                <form action="../assets/scripts/db/create_new_booking.php" method="POST">
+            
+            <div class="user-details-block" id="user-details-block">
+                <form action="/scripts/create_new_booking.php" method="POST">
                     <input type="text" id="user-forename" name="forename" placeholder="First Name" maxlength="16" required>
                     <input type="text" id="user-surname" name="surname" placeholder="Surname" maxlength="16" required>
                     <input type="tel" id="user-contact-no" name="contactNo" placeholder="Contact No." maxlength="11" minlength="11" required>
@@ -119,17 +136,22 @@
                     <input type="hidden" id="form-start" name="startTime" value="" readonly>
                     <input type="hidden" id="form-end" name="endTime" value="" readonly>
                     <input type="hidden" id="form-price" name="priceQuoted" value="" readonly>
-                    <input type="submit" id="form-book-submit" value="Book My Appointment" onclick="postAppointmentDetails()">
+                    <br>
+                    <input class="input-submit button bg-accent-one-light" type="submit" id="form-book-submit" value="Book Now" onclick="postAppointmentDetails()">
                 </form>
             </div>
 
+        </div>
         </div>
            
 </div>
 </div>
 </div>
-</div>
-    <?php include '../includes/footer.php';?>
+<!-- </div> -->
+</main>
+<?php 
+    $footerPath = $path . "/footer.php";
+    include_once($footerPath);?>
     <?php
 $db->close();
 ?>

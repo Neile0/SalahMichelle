@@ -1,2 +1,0 @@
-# salahmichelle
-Salah Michelle Wesbite
