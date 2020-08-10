@@ -15,6 +15,7 @@
                     <li><a href="/pages/coronavirus.php">coronavirus </a></li>
                     <li><a href="/pages/sitemap.php">sitemap</a></li>
                     <li><a href="/pages/contact.php">contact</a></li>
+                    <li><a href="/staff">staff</a></li>
                </ul>
             </div>
             <div class="footer-socials">

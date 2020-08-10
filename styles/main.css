@@ -194,6 +194,8 @@ input:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-shadow: 0 5px 2px -2px #F8F4F0;
+          box-shadow: 0 5px 2px -2px #F8F4F0;
 }
 
 .nav ul {
@@ -230,6 +232,10 @@ input:focus {
 }
 
 .nav-mobile {
+  display: none;
+}
+
+.nav-mobile-toggle {
   display: none;
 }
 
@@ -1112,6 +1118,9 @@ main {
 }
 
 @media only screen and (max-width: 800px) {
+  .nav {
+    overflow: visible;
+  }
   .nav-smlogo img {
     height: 40px;
   }
@@ -1120,6 +1129,30 @@ main {
   }
   .nav-right {
     display: none;
+  }
+  .nav-mobile-toggle {
+    display: block;
+  }
+  .nav-mobile {
+    position: absolute;
+    display: none;
+    -webkit-transition: 1s;
+    transition: 1s;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 100px;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  .nav-mobile ul {
+    padding: 0;
+  }
+  .nav-mobile li {
+    display: block;
+    padding: 25px;
+    text-align: center;
   }
   .hero {
     padding: 10px;
@@ -1225,6 +1258,279 @@ main {
   }
   .content-block {
     padding: 5px;
+  }
+}
+
+.staff-login {
+  width: 320px;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.staff-login-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px;
+  height: 100%;
+}
+
+.staff-login-title {
+  text-align: center;
+}
+
+.staff-login-title h1 {
+  font-family: "Bilbo Swash Caps";
+  font-size: 3.125em;
+}
+
+.staff-login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 40%;
+  margin-top: 50px;
+}
+
+.staff-login-form form {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.staff-login-input {
+  border: 2px solid #EFE5DC;
+}
+
+.staff-nav {
+  height: 100vh;
+  width: 180px;
+  position: fixed;
+  top: 0;
+  padding: 25px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 3;
+}
+
+.staff-nav h1 {
+  font-size: 1em;
+  text-transform: capitalize;
+}
+
+.staff-nav-links {
+  padding-top: 25px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+}
+
+.staff-nav-links hr {
+  margin-bottom: 25px;
+}
+
+.staff-nav-user {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.staff-nav-user-img {
+  background-color: #B85588;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 10px;
+}
+
+.staff-nav-user-img img {
+  height: 25px;
+  fill: white;
+}
+
+.staff-main {
+  width: 100%;
+  padding: 25px 25px 25px 205px;
+}
+
+.staff-dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.staff-dashboard-top {
+  height: 125px;
+  display: none;
+}
+
+.staff-dash-appointments-block {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.staff-appointment-table-cont {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  height: 100%;
+  background-color: #F8F4F0;
+}
+
+.staff-appointment-table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  overflow: scroll;
+}
+
+.staff-appointment-table td {
+  background-color: #F8F4F0;
+  padding: 10px 5px;
+}
+
+.staff-appointment-table tr {
+  min-height: 50px;
+}
+
+.staff-appointment-header {
+  background-color: #B85588 !important;
+  padding: 10px 5px;
+  text-transform: uppercase;
+  font-size: 1.125em;
+}
+
+.staff-appointments-subtitle {
+  display: inline-block;
+  height: 5%;
+  margin-right: 25px;
+}
+
+.staff-card-ico {
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 2em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #B85588;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.staff-card-title {
+  height: 30%;
+}
+
+.staff-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: white;
+  width: 125px;
+  height: 125px;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.staff-card a {
+  height: 100%;
+}
+
+@media only screen and (max-width: 840px) {
+  .staff-nav {
+    height: 100px;
+    width: 100%;
+    padding: 15px 25px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .staff-nav hr {
+    display: none;
+  }
+  .staff-nav-links {
+    padding: 0;
+  }
+  .staff-nav-user {
+    float: right;
+  }
+  .staff-main {
+    padding: 125px 25px 25px 25px;
   }
 }
 /*# sourceMappingURL=main.css.map */

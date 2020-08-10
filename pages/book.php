@@ -13,7 +13,7 @@
 $path = $_SERVER['DOCUMENT_ROOT'];
 $navPath = $path ."/topnav.php";
 $dbPath = $path . "/conn.php";
-include_once($dbPath);
+require($dbPath);
 include_once($navPath);
 
 // $type = "GENTS";

@@ -1,22 +1,15 @@
 <?php
-   $servername = "localhost:3306";
-   $username = "root";
-   $password = "root";
-   $schema = "salah_michelle_development";
-   // Create connection
-   $db = new mysqli($servername, $username, $password, $schema);
-    // Check connection
-    if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
-    }
+    $path = $_SERVER['DOCUMENT_ROOT'];
+    $dbPath = $path . "/conn.php";
+    require_once($dbPath);
 
     $id = $_REQUEST["id"];
     $workingHours = [];
 
-    $sql = "SELECT day,start_time,end_time,staff_id,staff_name FROM staff_schedule WHERE staff_id = ?";
+    $sql = "SELECT day,start_time,end_time,staff_id,staff.first_name FROM staff_schedule,staff WHERE staff_id = ? AND staff.id = ?";
     
     $stmt = $db->prepare($sql);
-    $stmt->bind_param("i",$id);
+    $stmt->bind_param("ii",$id,$id);
     $stmt->execute();
 
     $result = $stmt->get_result();

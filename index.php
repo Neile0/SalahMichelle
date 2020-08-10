@@ -11,7 +11,7 @@
     <script src= 
 "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
     </script> 
-    <script src="/scripts/home_styles.js"></script>
+    <script src="/scripts/main.js"></script>
 </head>
 <body>
 <?php 
@@ -143,10 +143,10 @@ include_once($navPath);
                     </tr>
                     
                     <tr><th>Monday</th><td>closed</td></tr>
-                    <tr><th>Tuesday</th><td>9AM - 5PM</td></tr>
-                    <tr><th>Wednesday</th><td>9AM - 7.30PM</td></tr>
-                    <tr><th>Thursday</th><td>9AM - 5PM</td></tr>
-                    <tr><th>Friday</th><td>9AM - 5PM</td></tr>
+                    <tr><th>Tuesday</th><td>9AM - 6PM</td></tr>
+                    <tr><th>Wednesday</th><td>9.30AM - 7PM</td></tr>
+                    <tr><th>Thursday</th><td>9AM - 6PM</td></tr>
+                    <tr><th>Friday</th><td>9AM - 6PM</td></tr>
                     <tr><th>Saturday</th><td>9AM - 5PM</td></tr>
                     <tr><th>Sunday</th><td>closed</td></tr>
                 </table>

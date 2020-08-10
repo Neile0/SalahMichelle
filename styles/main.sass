@@ -172,6 +172,8 @@ input
     padding: 15px 25px
     align-items: center
     justify-content: space-between
+    box-shadow: 0 5px 2px -2px $color-primary
+
 
 
     & ul
@@ -202,6 +204,8 @@ input
 .nav-mobile
     display: none
 
+.nav-mobile-toggle
+    display: none
 
 // 
 // FOOTER
@@ -851,8 +855,6 @@ main
 
 
 
-
-
 // 
 // 
 // 
@@ -884,6 +886,8 @@ main
 
 @media only screen and (max-width: 800px)
     $padding-dsk: 5px   
+    .nav
+        overflow: visible
 
     .nav-smlogo img
         height: 40px
@@ -893,6 +897,25 @@ main
 
     .nav-right
         display: none
+
+    .nav-mobile-toggle
+        display: block
+
+    .nav-mobile
+        position: absolute
+        display: none
+        transition: 1s
+        justify-content: center
+        top: 100px
+        right: 0
+        width: 100vw
+        height: 100vh
+        ul
+            padding: 0
+        li
+            display: block
+            padding: 25px
+            text-align: center
 
     .hero
         padding: 10px
@@ -988,3 +1011,208 @@ main
     .content-block
         padding: 5px
 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// STAFF
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+
+.staff-login
+    width: 320px
+    height: 500px
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
+
+.staff-login-block
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 25px
+    height: 100%
+
+
+.staff-login-title
+    text-align: center
+    
+    h1
+        font-family: $header-font
+        font-size: 3.125em
+
+.staff-login-form
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 40%
+    margin-top: 50px
+
+    form
+        height: 100%
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+    
+.staff-login-input
+    border: 2px solid $color-secondary
+
+
+.staff-nav
+    height: 100vh
+    width: 180px
+    position: fixed
+    top: 0
+    padding: 25px 10px
+    display: flex
+    flex-direction: column
+    align-items: center
+    // background-color: $accent-one-light
+    z-index: 3
+    h1
+        font-size: 1em
+        text-transform: capitalize
+
+.staff-nav-links
+    padding-top: 25px
+    flex-grow: 1
+    width: 100%
+    hr
+        margin-bottom: 25px
+
+.staff-nav-user
+    display: flex
+    justify-content: center
+    align-items: center
+
+.staff-nav-user-img 
+    background-color: $accent-one-light
+    height: 40px
+    width: 40px
+    border-radius: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-right: 10px
+    img
+        height: 25px
+        fill: white
+
+
+    
+
+.staff-main
+    width: 100%
+    padding: 25px 25px 25px 205px
+
+.staff-dashboard
+    display: flex
+    min-height: 100%
+    height: 
+    flex-direction: column
+
+.staff-dashboard-top
+    height: 125px
+    display: none
+
+.staff-dash-appointments-block
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+
+
+.staff-appointment-table-cont
+    flex-grow: 1
+    height: 100%
+    background-color: $color-primary
+
+
+
+.staff-appointment-table
+    width: 100%
+    text-align: left
+    border-collapse: collapse
+    overflow: scroll
+
+    td
+        background-color: $color-primary
+        padding: 10px 5px
+    tr
+        min-height: 50px
+        
+.staff-appointment-header
+    background-color: $accent-one-light !important
+    padding: 10px 5px
+    text-transform: uppercase
+    font-size: 1.125em
+
+.staff-appointments-subtitle
+    display: inline-block
+    height: 5%
+    margin-right: 25px
+
+
+
+.staff-card-ico
+    height: 70%
+    display: flex
+    font-size: 2em
+    justify-content: center
+    color: $accent-one-light
+    align-items: center
+
+.staff-card-title
+    height: 30%
+
+
+
+
+.staff-card
+    display: flex
+    flex-direction: column
+    background-color: white
+    width: 125px
+    height: 125px
+    border-radius: 25px
+    text-align: center
+
+
+
+.staff-card a
+    height: 100%
+
+@media only screen and (max-width: 840px)
+    .staff-nav
+        height: 100px
+        width: 100%
+        padding: 15px 25px
+        flex-direction: row
+        justify-content: space-between
+        hr
+            display: none
+    
+    .staff-nav-links
+        padding: 0
+
+    .staff-nav-user
+        float: right
+
+    .staff-main
+        padding: 125px 25px 25px 25px

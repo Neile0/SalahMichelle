@@ -1,58 +1,80 @@
 <?php
-   $servername = "localhost:3306";
-   $username = "root";
-   $password = "root";
-   $schema = "salah_michelle_development";
-   // Create connection
-   $db = new mysqli($servername, $username, $password, $schema);
-    // Check connection
-    if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
-    }
+   $path = $_SERVER['DOCUMENT_ROOT'];
+   $dbPath = $path . "/conn.php";
+   require_once($dbPath);
 
     $id = $_REQUEST["staffId"];
     $date = $_REQUEST["date"];
     $startTime = $_REQUEST["start"];
     $endTime = $_REQUEST["end"];
-    $duration = $_REQUEST["duration"];
-    
-    $start = new DateTime($startTime);
-    $end = new DateTime($endTime);
-    $interval = new DateInterval("PT".$duration."M");
+    $appointmentDuration = $_REQUEST["duration"];
 
-    for ($intStart = $start; $intStart < $end; $intStart->add($interval)) {
-    $endPeriod = clone $intStart;
-    $endPeriod->add($interval);
-    if ($endPeriod > $end) {
-        break;
-    }
-    $timeSlots[] = [$intStart->format('H:i'),$endPeriod->format('H:i')];
-    }
-
-    function is_booked($elt) { 
-        global $date;
-        global $id;
-        global $db;
-        $start = $elt[0];
-        $end = $elt[1];
-
-        $sql = "SELECT COUNT(*) AS appointments FROM appointment, staff WHERE appointment.staff_id = staff.id AND appointment.staff_id = ? AND appointment.date = ? AND ((appointment.start_time >= ? AND appointment.start_time < ?) OR (appointment.end_time_expected >= ? AND appointment.end_time_expected < ?))";
-        $stmt = $db->prepare($sql);
-        $stmt->bind_param("isssss",$id,$date,$start,$end,$start,$end);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            if($row["appointments"]==0){ 
-                return TRUE; 
+    function intervals($intervalstart,$intervalend,$intervalduration){
+        $interval = new DateInterval("PT".$intervalduration."M");
+        $intervalstart = new DateTime($intervalstart);
+        $intervalend = new DateTime($intervalend);
+        $l = [];
+        for ($intStart = $intervalstart; $intStart < $intervalend; $intStart->add($interval)) {
+            $endPeriod = clone $intStart;
+            $endPeriod->add($interval);
+            if ($endPeriod > $intervalend) {
+                break;
             }
-            else{ 
-                return FALSE;
-            }  
-        };
-        $stmt->close();
-    };
+            $l[] = [$intStart->format('H:i'),$endPeriod->format('H:i')];
+        } 
+        return $l;
+    }
 
-    $availableTimeSlots = array_values(array_filter($timeSlots, "is_booked")); 
-    echo json_encode($availableTimeSlots);
+    $possibleTimeSlots = intervals($startTime,$endTime,5);
+
+    $preBooked = [];
+
+    $sql = "SELECT start_time, end_time_expected FROM appointment WHERE date = ? AND staff_id = ? ORDER BY start_time";
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param("si",$date,$id);
+    $stmt->execute();
+    $stmt->store_result();    
+    $stmt->bind_result($bookedstart, $bookedend); 
+    if($stmt->num_rows > 0) {
+        while ($stmt->fetch()) {
+            array_push($preBooked, [$bookedstart, $bookedend]); 
+        }
+    }
+    $stmt->close();
+
+    $booked = [];
+
+    foreach($preBooked as $e){
+        $eSlots = intervals($e[0],$e[1],5);
+        $booked = array_merge($booked,$eSlots);
+    }
+
+    function filterSlots($e){
+        global $booked;
+        if (in_array($e,$booked)){
+            return FALSE;
+        }
+        else{
+            return TRUE;
+        }
+
+    }
+
+    $appointmentSlots = [];
+    $timeSlots = array_values(array_filter($possibleTimeSlots,"filterSlots"));
+    $occupies = $appointmentDuration / 5;
+    for ($i = 0; $i < (count($timeSlots) - $occupies - 1); $i++){
+        $slotStart = new DateTime($timeSlots[$i][0]);
+        $dur = new DateInterval("PT".$appointmentDuration."M");
+        $target = clone $slotStart;
+        $target->add($dur);
+
+        if (new DateTime($timeSlots[$i + $occupies - 1][1]) == $target ){
+            array_push($appointmentSlots,[$slotStart->format('H:i'),$target->format('H:i')]);
+        }
+        
+    }
+
+    echo json_encode($appointmentSlots);
     $db->close();
 ?>
