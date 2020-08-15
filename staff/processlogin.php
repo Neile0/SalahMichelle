@@ -21,9 +21,12 @@ $stmt->bind_result($staffId,$username,$pw);
 if($stmt->num_rows == 1){
     $stmt->fetch();
     if (password_verify($password,$pw)){
-        echo 1;
+        $_SESSION["auth"] = TRUE;
         $_SESSION["username"] = $username;
         $_SESSION["staffId"] = $staffId;
+        echo 1;
+        
+        
         exit;
     }
     else {

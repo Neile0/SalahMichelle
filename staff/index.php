@@ -16,24 +16,19 @@ $sessionPath = $staffPath . "/session.php";
 $navPath = $staffPath . "/staffnav.php";
 require($sessionPath);
 require($dbPath);
-
-
+if (!logged_in()){
+    log_out();
+}
 ?>
-
 
 <body>
+
 <?php
 include_once($navPath);
-
-
-
-
 ?>
 
-
-
 <main class="staff-main bg-secondary staff-dashboard">
-<!-- <?php  echo print_r($_SESSION);?> -->
+
 <div class="staff-dashboard-top">
 
         <div class="staff-dash-card staff-card">

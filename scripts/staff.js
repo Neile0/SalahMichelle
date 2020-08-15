@@ -1,5 +1,8 @@
 function displayAppointments(date){
+    console.log(date)
+
     var appointments = getAppointments(date);
+    console.log(appointments);
     var table = document.getElementById("staff-appointment-table");
     table.innerHTML = ""
     var header = table.createTHead();
@@ -29,6 +32,7 @@ function displayAppointments(date){
         serviceCell.innerHTML = service;
 
     }
+
     }
     else {
         var row = table.insertRow(1);
@@ -53,10 +57,8 @@ function getAppointments(date){
 
 function printAppointments(){
     var date = document.getElementById("staff-appointment-date").value;
-    
     var table = document.getElementById("staff-appointment-table-cont").outerHTML;
     console.log(table);
-
     var win = window.open("","","height=700,width=700");
     win.document.write(date + table);
     win.document.close();
@@ -69,8 +71,23 @@ function initializeAppointments(){
     var dateSelector = document.getElementById("staff-appointment-date");
     nextDate = getNextDayOfAppointments();
     console.log(nextDate);
-    dateSelector.value = nextDate;
-    displayAppointments(nextDate);
+    if (nextDate != 0){
+        dateSelector.value = nextDate;
+        displayAppointments(nextDate);
+    }
+    else {
+        currentDate = new Date();
+        yy = currentDate.getFullYear();
+        mm = currentDate.getMonth()+1;
+        mm = (mm != 13) ? mm : 1;
+        mm = (mm < 10) ? "0"+mm : mm
+        dd = currentDate.getDate();
+        str = yy + "-" + mm + "-" + dd
+        console.log(str)
+        dateSelector.value = str;
+        displayAppointments(str);
+    }
+    
 
 }
 
