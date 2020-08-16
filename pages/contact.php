@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salah Michelle | </title>
+    <title>Salah Michelle | Contact</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="icon" type="image/svg" href="/images/icons/favicon.svg">
-    <!-- <link rel="stylesheet" href="../assets/css/page.css"> -->
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+    <script src="/scripts/main.js"></script>
 </head>
 <body>
 <?php 

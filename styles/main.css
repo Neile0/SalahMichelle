@@ -148,28 +148,34 @@ input:focus {
   background-attachment: fixed;
 }
 
+.banner-title {
+  text-align: center;
+}
+
+.banner-title p {
+  text-transform: capitalize;
+  font-size: 1em;
+  font-family: "Poppins", sans-serif;
+}
+
 .book-page-banner {
-  background-image: url("/images/17-IMG_5586.jpg");
+  background-image: url("/images/best_seat.jpg");
   background-size: cover;
-  background-position-y: 40%;
 }
 
 .service-page-banner {
-  background-image: url("/images/27-IMG_5599.jpg");
+  background-image: url("/images/hero.jpg");
   background-size: cover;
-  background-position-y: 30%;
 }
 
 .about-page-banner {
-  background-image: url("/images/salon.jpg");
+  background-image: url("/images/mirrors.jpg");
   background-size: cover;
-  background-position-y: 30%;
 }
 
 .gents-page-banner {
-  background-image: url("/images/44-IMG_5660.jpg");
+  background-image: url("/images/clippers.jpg");
   background-size: cover;
-  background-position-y: 30%;
 }
 
 .nav-btn {
@@ -241,8 +247,6 @@ input:focus {
 
 .footer {
   overflow: hidden;
-  position: -webkit-sticky;
-  position: sticky;
   z-index: 0;
   bottom: 0;
   left: 0;
@@ -371,7 +375,7 @@ main {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-image: url("/images/26-IMG_5598.jpg");
+  background-image: url("/images/hero.jpg");
   height: 100%;
   width: 100%;
 }

@@ -6,6 +6,10 @@
     <title>Salah Michelle | Book An Appointment</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="icon" type="image/svg" href="/images/icons/favicon.svg">
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+    <script src="/scripts/main.js"></script>
     <script src="/scripts/booking_system.js"></script>
 </head>
 <body>

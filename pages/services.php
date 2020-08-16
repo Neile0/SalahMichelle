@@ -6,7 +6,10 @@
     <title>Salah Michelle | Services</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="icon" type="image/svg" href="/images/icons/favicon.svg">
-    <!-- <link rel="stylesheet" href="../assets/css/page.css"> -->
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+    <script src="/scripts/main.js"></script>
 </head>
 <body>
 <?php 

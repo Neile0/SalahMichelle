@@ -6,7 +6,10 @@
     <title>Salah Michelle | About Us</title>
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="icon" type="image/svg" href="/images/icons/favicon.svg">
-    <!-- <link rel="stylesheet" href="../assets/css/page.css"> -->
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> 
+    </script> 
+    <script src="/scripts/main.js"></script>
 </head>
 <body>
 <?php 
@@ -18,7 +21,8 @@ include_once($navPath);
 <main class="bg-primary about-page">
     <div class="banner about-page-banner">
         <div class="banner-title">
-            <h1>SM</h1>
+            <h1>Salah Michelle</h1>
+            <!-- <p>About Us</p> -->
         </div>
     </div>
 
