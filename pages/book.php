@@ -53,7 +53,7 @@ include_once($navPath);
                 <option value="NOSELECTION">Select a Service</option>
                     <?php
 
-                    $sql = "SELECT id,title,price FROM salah_michelle_development.service WHERE type = '$type' ORDER BY type DESC;";
+                    $sql = "SELECT id,title,price FROM service WHERE type = '$type' ORDER BY type DESC;";
                     $result = $db->query($sql);
                     $services = $result->fetch_all();
                     foreach ($services as list($id,$title,$price)){
