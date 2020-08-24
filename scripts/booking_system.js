@@ -290,7 +290,7 @@ function confirmAppointmentDetails(){
     var detailsP = document.createElement("p");
     var detailsText = document.createTextNode(details);
 
-
+    eAppDetails.innerHTML = "";
     detailsP.appendChild(detailsText);
     eAppDetails.appendChild(detailsP);
 
@@ -537,8 +537,8 @@ function clearCalendarSelectable(){
 }
 
 // Other Functions
-function convertAMPM(date) {
-    var timedata = date.split(":");
+function convertAMPM(time) {
+    var timedata = time.split(":");
     var hours = timedata[0];
     var minutes = timedata[1];
     var ampm = hours >= 12 ? 'PM' : 'AM';

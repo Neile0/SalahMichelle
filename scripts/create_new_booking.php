@@ -15,11 +15,11 @@
 
 
 
-    function client_exists($name,$num){
+    function client_exists($forename,$surname,$num){
         global $db;
-        $sql = "SELECT COUNT(*) AS 'exists' FROM client WHERE first_name = ? AND contact_phone = ?";
+        $sql = "SELECT COUNT(*) AS 'exists' FROM client WHERE first_name = ? AND surname = ? AND contact_phone = ?";
         $stmt = $db->prepare($sql);
-        $stmt->bind_param("ss",$name,$num);
+        $stmt->bind_param("sss",$forename,$surname,$num);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();
@@ -34,10 +34,10 @@
    
     }
 
-    if (client_exists($forename,$contactNo)){
-        $sql = "SELECT id FROM client WHERE first_name = ? AND contact_phone = ?";
+    if (client_exists($forename,$surname,$contactNo)){
+        $sql = "SELECT id FROM client WHERE first_name = ? AND surname = ? AND contact_phone = ?";
         $stmt = $db->prepare($sql);
-        $stmt->bind_param("ss",$forename,$contactNo);
+        $stmt->bind_param("sss",$forename,$surname,$contactNo);
         $stmt->execute();
         $result = $stmt->get_result();
         $stmt->close();

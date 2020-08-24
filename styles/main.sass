@@ -1,6 +1,7 @@
 $color-primary: #F8F4F0
 $color-secondary: #EFE5DC
 $color-ternary: #DEC19B
+$color-red: #FF4949
 $accent-one-light: #B85588
 $accent-one-dark: #6D2E4E
 $accent-one-darker: #53223B
@@ -1174,12 +1175,167 @@ main
     text-transform: uppercase
     font-size: 1.125em
 
+.staff-appointment-ref
+    display: none
+
 .staff-appointments-subtitle
     display: inline-block
     height: 5%
     margin-right: 25px
 
 
+
+
+
+
+.staff-appointment-details-container
+    height: 100vh
+    width: 100vw
+    position: fixed
+    z-index: 4
+    left: 0
+    top: 0
+    overflow: auto
+    background-color: rgb(0,0,0)
+    background-color: rgba(0,0,0,0.4)
+    display: none
+
+
+
+.staff-appointment-details-block
+    background-color: white
+    margin: 125px auto
+    min-height: 500px
+    min-width: 320px
+    height: 500px
+    width: 320px
+    
+.staff-appointment-details-close
+    float: right
+    font-size: 40px
+    line-height: 1
+    color: grey
+    // font-weight: bold
+    margin-left: 290px
+    position: absolute
+    &:hover
+        color: black
+        cursor: pointer
+
+
+.staff-appointment-details
+    display: flex
+    flex-direction: column
+    height: 100%
+    width: 100%
+    padding: 10px 20px
+
+
+.staff-appointment-details-time
+    text-align: center
+    padding: 10px
+    flex-grow: 0
+
+.staff-appointment-details-apptime
+    font-size: 1.5em
+    line-height: 1
+
+.staff-appointment-details-appdate
+    color: grey
+
+.staff-appointment-details-app
+    flex-grow: 2
+    padding: 10px 0
+    font-size: 1.25em
+
+.staff-appointment-details-appbookedby
+    font-size: 0.9em
+
+.staff-appointment-details-buttons
+    flex-grow: 1.5
+    // justify-content: center
+    align-items: center
+    display: flex
+    flex-direction: column
+
+.staff-appointment-details-btndone
+    display: block
+    width: 100px
+    margin-bottom: 10px
+
+.staff-appointment-details-btncancel
+    text-transform: capitalize
+    text-decoration: underline
+    color: grey
+    font-size: 0.9em
+    display: block
+
+
+    
+.staff-appointment-cancel-container
+    height: 100vh
+    width: 100vw
+    position: fixed
+    z-index: 4
+    left: 0
+    top: 0
+    overflow: auto
+    background-color: rgb(0,0,0)
+    background-color: rgba(0,0,0,0.4)
+    display: none
+
+.staff-appointment-cancel-block
+    background-color: white
+    margin: 150px auto
+    min-height: 295px
+    min-width: 260px
+    height: 295px
+    width: 260px
+
+.staff-appointment-cancel
+    display: flex
+    flex-direction: column
+    height: 100%
+    width: 100%
+    padding: 10px 20px
+
+.staff-appointment-header
+    height: 85px
+
+.staff-appointment-cancel-title
+    font-size: 1.25em
+    text-align: center
+
+.staff-appointment-cancel-subtitle
+    font-size: 0.875em
+
+.staff-appointment-cancel-reason
+    padding: 10px 0
+    height: 150px
+    textarea
+        height: 100px
+        width: 100%
+        resize: none
+
+.staff-appointment-cancel-buttons
+    display: flex
+    align-items: center
+    height: 35px
+
+.staff-appointment-cancel-btnno
+    display: block
+    width: 50%
+    text-transform: capitalize
+
+    &:hover
+        cursor: pointer
+
+.staff-appointment-cancel-btncancel
+    display: block
+    width: 50%
+    background-color: rgba(255, 73, 73, 0.7)
+    &:hover
+        background-color: rgb(255, 73, 73)
 
 .staff-card-ico
     height: 70%
@@ -1226,4 +1382,4 @@ main
         float: right
 
     .staff-main
-        padding: 125px 25px 25px 25px
+        padding: 125px 10px 10px 10px

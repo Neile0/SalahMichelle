@@ -29,7 +29,7 @@
 
     $preBooked = [];
 
-    $sql = "SELECT start_time, end_time_expected FROM appointment WHERE date = ? AND staff_id = ? ORDER BY start_time";
+    $sql = "SELECT start_time, end_time_expected FROM appointment WHERE date = ? AND staff_id = ? AND cancelled = 0 ORDER BY start_time";
     $stmt = $db->prepare($sql);
     $stmt->bind_param("si",$date,$id);
     $stmt->execute();

@@ -75,7 +75,7 @@ include_once($navPath);
         </div>
 
         <div class="date-block booking-block">
-            <label for="date"><h2>When <span>(please note that bookings must be made at least 2 days in advance)</span></h2></label>
+            <label for="date"><h2>When <span>(please note that bookings must be made at least 1 day in advance)</span></h2></label>
             <div class="calander booking-calendar" >
                 <div class="cal-header ">
                     <div class="cal-header-left cal-header-item cal-arrow cal-disabled"  id="cal-left-arrow"><</div>
