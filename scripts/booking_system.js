@@ -329,16 +329,16 @@ function showCalendar(MONTH,YEAR){
     const DAYSINMONTH = new Date(YEAR,iMONTH+1,0).getDate();
     const FIRSTDAYWEEKDAY = new Date(YEAR,iMONTH,1).getDay();
     const LASTDAYWEEKDAY = new Date(YEAR,iMONTH+1,0).getDay();         
-    let offserFromMon = FIRSTDAYWEEKDAY - 1;
+    let offsetFromMon = FIRSTDAYWEEKDAY - 1;
     let extraDays = 0;
 
     let iMonthPrior = iMONTH -1;
     let iMonthNext = iMONTH + 1;
     const YEARNEXT = YEAR + 1;
     const YEARPRIOR = YEAR - 1;
-
-    if (offserFromMon == -1) {
-        offserFromMon = 6; 
+    
+    if (offsetFromMon == -1) {
+        offsetFromMon = 6; 
     };
     if (LASTDAYWEEKDAY > 0){
         extraDays = 6 - (LASTDAYWEEKDAY - 1)
@@ -350,9 +350,9 @@ function showCalendar(MONTH,YEAR){
         iMonthNext = 0;
     };
 
-    let strMonth = (MONTHFROMONE).toString();
-    let strMonthPrior = (MONTHFROMONE-1).toString(); 
-    let strMonthNext = (MONTHFROMONE+1).toString();
+    let strMonth = (iMONTH + 1).toString();
+    let strMonthPrior = (iMonthPrior + 1).toString(); 
+    let strMonthNext = (iMonthNext + 1).toString();
 
     if (parseInt(strMonth) < 10){
         strMonth = "0" + strMonth;
@@ -364,9 +364,14 @@ function showCalendar(MONTH,YEAR){
         strMonthNext = "0"+ strMonthNext;
         }
                 
+    console.log("Month Actual " + strMonth + " Month i " + iMONTH);
+    console.log("Month Prior Actual " + strMonthPrior + " Month Prior i " + iMonthPrior);
+    console.log("Month Next Actual " + strMonthNext + " Month Next i " + iMonthNext);
+    console.log("Offset from Mon " + offsetFromMon);
+
     var days = [];
     if (iMonthPrior == 11){
-        for (var i = offserFromMon-1; i >= 0; i--){
+        for (var i = offsetFromMon-1; i >= 0; i--){
             days.push([YEARPRIOR.toString(),strMonthPrior,(new Date(YEAR,iMONTH,-i).getDate()).toString()]);
         };
         for (var i = 1; i <= DAYSINMONTH;i++){
@@ -384,12 +389,13 @@ function showCalendar(MONTH,YEAR){
         };
     }
     else if (iMonthNext == 0){
-        for (var i = offserFromMon-1; i >= 0; i--){
+        for (var i = offsetFromMon-1; i >= 0; i--){
             days.push([YEAR.toString(),strMonthPrior,(new Date(YEAR,iMONTH,-i).getDate()).toString()]);
+            console.log([YEAR.toString(),strMonthPrior,(new Date(YEAR,iMONTH,-i).getDate()).toString()]);
         };
         for (var i = 1; i <= DAYSINMONTH;i++){
             if (i < 10) {
-                days.push([YEAR.toString(),strMonthPrior,"0"+i.toString()]);
+                days.push([YEAR.toString(),strMonth,"0"+i.toString()]);
             }
             else{
                 days.push([YEAR.toString(),strMonth,i.toString()]);
@@ -402,7 +408,7 @@ function showCalendar(MONTH,YEAR){
         };
     }
     else {
-        for (var i = offserFromMon-1; i >= 0; i--){
+        for (var i = offsetFromMon-1; i >= 0; i--){
             days.push([YEAR.toString(),strMonthPrior,(new Date(YEAR,iMONTH,-i).getDate()).toString()])
         };
         for (var i = 1; i <= DAYSINMONTH;i++){
@@ -420,6 +426,7 @@ function showCalendar(MONTH,YEAR){
         };
     }
 
+  
     days.forEach(function([yy,mm,dd]){
         let strFulldate = yy + "-" + mm + "-" + dd;
         let fulldate = new Date(strFulldate);
