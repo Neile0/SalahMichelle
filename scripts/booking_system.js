@@ -155,6 +155,9 @@ function selectDate(selected){
     var e = document.getElementById(selectedDate);
     e.classList.add("selected-date");
     let dayOfWeeki = (new Date(selected).getDay()) -1;
+    if (dayOfWeeki == -1){
+        dayOfWeeki = 6;
+    }
     let dayOfWeek = DAYSOFWEEK[dayOfWeeki]; 
     if (selectedStylistId == "ANY"){
         stylists = getStylistByDate(selectedService.id,dayOfWeek);
